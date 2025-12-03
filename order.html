@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Order - EcoRide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <h1>EcoRide</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="catalog.html">Catalog</a></li>
+                    <li><a href="order.html" class="active">Order</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="order-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Rent Your E-Bike</h1>
+                <p class="hero-subtitle">Fill out the form below to request your rental</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="order-intro">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <p class="intro-text">Choose your preferred e-bike, select rental dates, and provide your contact information. We'll confirm your reservation within 24 hours. All rentals include helmet, lock, and basic insurance.</p>
+        </div>
+    </section>
+
+    <section class="order-form-section">
+        <div class="container">
+            <form id="rentalForm" class="rental-form" action="thanks.html" method="POST" novalidate>
+                
+                <fieldset class="form-section">
+                    <legend class="form-legend">Customer Information</legend>
+                    
+                    <div class="form-group">
+                        <label for="fullName" class="form-label">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" required 
+                               class="form-input" 
+                               placeholder="Enter your full name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address *</label>
+                        <input type="email" id="email" name="email" required 
+                               class="form-input" 
+                               placeholder="your.email@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required 
+                               class="form-input" 
+                               placeholder="+358 40 123 4567"
+                               pattern="[\+\d\s\-\(\)]+"
+                               title="Please enter a valid phone number">
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-section">
+                    <legend class="form-legend">Rental Details</legend>
+                    
+                    <div class="form-group">
+                        <label for="bikeType" class="form-label">Select E-Bike *</label>
+                        <select id="bikeType" name="bikeType" required class="form-select">
+                            <option value="">Choose an e-bike...</option>
+                            <option value="city-commuter">City Commuter Pro - 39€/day</option>
+                            <option value="mountain-explorer">Mountain Explorer - 45€/day</option>
+                            <option value="compact-folding">Compact Folding - 35€/day</option>
+                            <option value="urban-cargo">Urban Cargo - 55€/day</option>
+                            <option value="touring-elite">Touring Elite - 49€/day</option>
+                            <option value="adventure-pack">Adventure Pack (Accessories) - 15€/day</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="startDate" class="form-label">Start Date *</label>
+                            <input type="date" id="startDate" name="startDate" required 
+                                   class="form-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="rentalDays" class="form-label">Number of Days *</label>
+                            <input type="number" id="rentalDays" name="rentalDays" required 
+                                   class="form-input" min="1" max="30" value="1"
+                                   placeholder="1-30 days">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="quantity" class="form-label">Quantity *</label>
+                        <input type="number" id="quantity" name="quantity" required 
+                               class="form-input" min="1" max="5" value="1"
+                               placeholder="How many bikes? (max 5)">
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-section">
+                    <legend class="form-legend">Additional Information</legend>
+                    
+                    <div class="form-group">
+                        <label for="specialRequests" class="form-label">Special Requests</label>
+                        <textarea id="specialRequests" name="specialRequests" 
+                                  class="form-textarea" rows="4"
+                                  placeholder="Any special requirements or questions..."></textarea>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-section">
+                    <legend class="form-legend">Terms & Conditions</legend>
+                    
+                    <div class="form-checkbox-group">
+                        <input type="checkbox" id="terms" name="terms" required 
+                               class="form-checkbox">
+                        <label for="terms" class="form-checkbox-label">
+                            I accept the rental terms and privacy policy *
+                        </label>
+                    </div>
+                    
+                    <div class="form-checkbox-group">
+                        <input type="checkbox" id="newsletter" name="newsletter" 
+                               class="form-checkbox">
+                        <label for="newsletter" class="form-checkbox-label">
+                            Subscribe to our newsletter for special offers
+                        </label>
+                    </div>
+                </fieldset>
+
+                <div class="form-submit">
+                    <button type="submit" class="cta-button form-submit-btn">
+                        Submit Rental Request
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>EcoRide</h3>
+                    <p>Making sustainable transportation accessible to everyone.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📍 123 Green Street, Eco City</p>
+                    <p>📞 +1 (555) 123-4567</p>
+                    <p>✉️ hello@ecoride.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Business Hours</h4>
+                    <p>Monday - Friday: 8AM - 8PM</p>
+                    <p>Weekends: 9AM - 6PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EcoRide. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('startDate').min = today;
+            
+            const form = document.getElementById('rentalForm');
+            form.addEventListener('submit', function(event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    highlightInvalidFields();
+                }
+            });
+            
+            function highlightInvalidFields() {
+                const invalidFields = form.querySelectorAll(':invalid');
+                invalidFields.forEach(field => {
+                    field.classList.add('invalid');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
